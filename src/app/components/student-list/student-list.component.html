@@ -26,7 +26,6 @@
   </div>
 
   <ng-container *ngIf="isListVisible">
-    <!-- Conditional Rendering: رسالة "No Students Found" لما القائمة تبقى فاضية -->
     <p class="empty-state" *ngIf="filteredStudents.length === 0">No Students Found</p>
 
     <div class="cards-container" *ngIf="filteredStudents.length > 0">
