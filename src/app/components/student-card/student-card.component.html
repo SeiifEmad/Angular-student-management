@@ -1,0 +1,26 @@
+<!-- Conditional Styling: كلاس passed/failed بيتحدد حسب حالة الطالب -->
+<div class="student-card" [ngClass]="student.status === 'Passed' ? 'passed' : 'failed'">
+  <div class="card-header">
+    <div class="basic-info">
+      <span class="name">{{ student.name }}</span>
+      <span class="status-badge" [ngClass]="student.status === 'Passed' ? 'badge-passed' : 'badge-failed'">
+        {{ student.status }}
+      </span>
+    </div>
+
+    <div class="card-actions">
+      <button class="btn-toggle" (click)="toggleDetails()">
+        {{ showDetails ? 'Hide Details' : 'Show Details' }}
+      </button>
+      <button class="btn-delete" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+
+  <!-- Conditional Rendering: التفاصيل تظهر بس لو showDetails = true -->
+  <div class="card-details" *ngIf="showDetails">
+    <p><strong>Age:</strong> {{ student.age }}</p>
+    <p><strong>Grade:</strong> {{ student.grade }}</p>
+    <!-- استخدام الـ Custom Pipe هنا -->
+    <p><strong>Evaluation:</strong> {{ student.grade | passStatus }}</p>
+  </div>
+</div>

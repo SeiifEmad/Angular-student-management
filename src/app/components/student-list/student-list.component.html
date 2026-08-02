@@ -1,0 +1,40 @@
+<div class="list-wrapper">
+  <div class="list-toolbar">
+    <h2>Students</h2>
+
+    <div class="stats">
+      <span class="stat passed">Passed: {{ passedCount }}</span>
+      <span class="stat failed">Failed: {{ failedCount }}</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search by name..."
+      [(ngModel)]="searchTerm"
+    />
+
+    <button class="btn-sort" (click)="toggleSort()">
+      Sort by Grade {{ sortAscending ? '↑' : '↓' }}
+    </button>
+
+    <button class="btn-visibility" (click)="toggleListVisibility()">
+      {{ isListVisible ? 'Hide List' : 'Show List' }}
+    </button>
+  </div>
+
+  <ng-container *ngIf="isListVisible">
+    <!-- Conditional Rendering: رسالة "No Students Found" لما القائمة تبقى فاضية -->
+    <p class="empty-state" *ngIf="filteredStudents.length === 0">No Students Found</p>
+
+    <div class="cards-container" *ngIf="filteredStudents.length > 0">
+      <app-student-card
+        *ngFor="let student of filteredStudents"
+        [student]="student"
+        (delete)="onDeleteStudent($event)"
+      ></app-student-card>
+    </div>
+  </ng-container>
+</div>

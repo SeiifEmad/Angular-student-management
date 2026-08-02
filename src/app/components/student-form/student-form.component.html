@@ -1,0 +1,32 @@
+<form class="student-form" [formGroup]="studentForm" (ngSubmit)="onAddStudent()">
+  <h2>Add New Student</h2>
+
+  <div class="field">
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" placeholder="e.g. Sara Mahmoud" />
+    <small class="error" *ngIf="name?.invalid && name?.touched">
+      Name is required.
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="age">Age</label>
+    <input id="age" type="number" formControlName="age" placeholder="e.g. 20" />
+    <small class="error" *ngIf="age?.invalid && age?.touched">
+      <span *ngIf="age?.errors?.['required']">Age is required.</span>
+      <span *ngIf="age?.errors?.['min']">Age must be at least 18.</span>
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="grade">Grade</label>
+    <input id="grade" type="number" formControlName="grade" placeholder="0 - 100" />
+    <small class="error" *ngIf="grade?.invalid && grade?.touched">
+      <span *ngIf="grade?.errors?.['required']">Grade is required.</span>
+      <span *ngIf="grade?.errors?.['min'] || grade?.errors?.['max']">Grade must be between 0 and 100.</span>
+    </small>
+  </div>
+
+  <!-- Event Binding: زرار الإضافة -->
+  <button type="submit" class="btn-add">Add Student</button>
+</form>

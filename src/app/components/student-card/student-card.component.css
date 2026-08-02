@@ -1,0 +1,102 @@
+.student-card {
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-left: 5px solid transparent;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.1s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-1px);
+}
+
+/* Conditional Styling: أخضر للناجح، أحمر للراسب */
+.student-card.passed {
+  border-left-color: #16a34a;
+}
+
+.student-card.failed {
+  border-left-color: #dc2626;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.basic-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.badge-passed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.badge-failed {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.card-actions button {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.btn-toggle:hover {
+  background: #dbeafe;
+}
+
+.btn-delete {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.btn-delete:hover {
+  background: #fee2e2;
+}
+
+.card-details {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #e5e7eb;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.card-details p {
+  margin: 4px 0;
+}

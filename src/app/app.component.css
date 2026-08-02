@@ -1,0 +1,19 @@
+.app-shell {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.app-header h1 {
+  color: #111827;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.app-main {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}

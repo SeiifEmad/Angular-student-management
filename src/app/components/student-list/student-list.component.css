@@ -1,0 +1,80 @@
+.list-wrapper {
+  max-width: 640px;
+}
+
+.list-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.list-toolbar h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.15rem;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.stat.passed {
+  color: #16a34a;
+}
+
+.stat.failed {
+  color: #dc2626;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.btn-sort,
+.btn-visibility {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-sort:hover,
+.btn-visibility:hover {
+  background: #e5e7eb;
+}
+
+.empty-state {
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  padding: 30px 0;
+  border: 1px dashed #e5e7eb;
+  border-radius: 10px;
+}
