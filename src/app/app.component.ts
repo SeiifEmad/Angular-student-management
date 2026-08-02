@@ -4,7 +4,6 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { StudentService } from './services/student.service';
 import { Student } from './models/student.model';
 
-// AppComponent: هو الأب (Parent) اللي بيوصل بين الفورم والليست
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -17,8 +16,7 @@ export class AppComponent {
 
   constructor(private studentService: StudentService) {}
 
-  // بيستقبل الطالب الجديد القادم من StudentFormComponent عن طريق @Output
-  // وبعدين بينده على الـ Service عشان يضيفه فعليًا
+
   onStudentAdded(newStudent: Omit<Student, 'id' | 'status'>): void {
     this.studentService.addStudent(newStudent);
   }
