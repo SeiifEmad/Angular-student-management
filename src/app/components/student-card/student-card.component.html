@@ -1,4 +1,3 @@
-<!-- Conditional Styling: كلاس passed/failed بيتحدد حسب حالة الطالب -->
 <div class="student-card" [ngClass]="student.status === 'Passed' ? 'passed' : 'failed'">
   <div class="card-header">
     <div class="basic-info">
@@ -16,11 +15,9 @@
     </div>
   </div>
 
-  <!-- Conditional Rendering: التفاصيل تظهر بس لو showDetails = true -->
   <div class="card-details" *ngIf="showDetails">
     <p><strong>Age:</strong> {{ student.age }}</p>
     <p><strong>Grade:</strong> {{ student.grade }}</p>
-    <!-- استخدام الـ Custom Pipe هنا -->
     <p><strong>Evaluation:</strong> {{ student.grade | passStatus }}</p>
   </div>
 </div>
